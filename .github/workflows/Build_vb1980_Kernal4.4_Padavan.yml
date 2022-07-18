@@ -160,6 +160,8 @@ jobs:
         echo "njitclient=${{fromJson(github.event.inputs.plugins).njitclient}}" >> $GITHUB_ENV
         echo "minieap=${{fromJson(github.event.inputs.plugins).minieap}}" >> $GITHUB_ENV
         echo "dogcom=${{fromJson(github.event.inputs.plugins).dogcom}}" >> $GITHUB_ENV
+        echo "tydd=${{fromJson(github.event.inputs.plugins).tydd}}" >> $GITHUB_ENV
+        echo "wifidog=${{fromJson(github.event.inputs.plugins).wifidog}}" >> $GITHUB_ENV
     - name: Custom config
       run: |
         cd $WORK_PATH/trunk
@@ -239,6 +241,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=${{env.njitclient}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_MINIEAP=${{env.minieap}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=${{env.dogcom}}" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_TYDD=${{env.tydd}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_WIFIDOG=${{env.wifidog}}" >> .config
         #校园网相关结束
         #########################################################################################
