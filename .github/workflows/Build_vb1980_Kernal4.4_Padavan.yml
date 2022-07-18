@@ -43,7 +43,7 @@ on:
       plugins:
         description: 'json format string of include configs'
         required: true
-        default: '{"vpnsvr":"n","vpncli":"n","vpncmd":"n","ss":"y","v2ray":"n","xray":"y","trojan":"y","ssobfs":"y","dnsforwarder":"n","adbyby":"y","adguardhome":"n","smartdns":"n","aliddns":"n","zerotier":"n","ddnsto":"y","wireguard":"n","frpc":"y","aldriver":"n","sqm":"n","mentohust":"n","scutclient":"n","njitclient":"n","minieap":"n","dogcom":"n","tydd":"n","wifidog":"y"}'
+        default: '{"vpnsvr":"n","vpncli":"n","vpncmd":"n","ss":"y","v2ray":"n","xray":"y","trojan":"y","ssobfs":"y","dnsforwarder":"n","adbyby":"y","adguardhome":"n","smartdns":"n","aliddns":"n","zerotier":"n","ddnsto":"y","wireguard":"n","frpc":"y","aldriver":"n","sqm":"n","mentohust":"n","scutclient":"n","njitclient":"n","minieap":"n","dogcom":"n","ttyd":"n","wifidog":"y"}'
       rainbowui:
         type: boolean
         description: 'whether to apply rainbow ui'
@@ -160,7 +160,7 @@ jobs:
         echo "njitclient=${{fromJson(github.event.inputs.plugins).njitclient}}" >> $GITHUB_ENV
         echo "minieap=${{fromJson(github.event.inputs.plugins).minieap}}" >> $GITHUB_ENV
         echo "dogcom=${{fromJson(github.event.inputs.plugins).dogcom}}" >> $GITHUB_ENV
-        echo "tydd=${{fromJson(github.event.inputs.plugins).tydd}}" >> $GITHUB_ENV
+        echo "ttyd=${{fromJson(github.event.inputs.plugins).ttyd}}" >> $GITHUB_ENV
         echo "wifidog=${{fromJson(github.event.inputs.plugins).wifidog}}" >> $GITHUB_ENV
     - name: Custom config
       run: |
@@ -241,7 +241,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=${{env.njitclient}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_MINIEAP=${{env.minieap}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=${{env.dogcom}}" >> .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TYDD=${{env.tydd}}" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_TTYD=${{env.ttyd}}" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_WIFIDOG=${{env.wifidog}}" >> .config
         #校园网相关结束
         #########################################################################################
